@@ -14,5 +14,7 @@ urlpatterns = [
     # path('list/', PostListAPIView.as_view()),
     # path('createOrlist/byMixin/', PostListCreateMixin.as_view()),
     # path('createOrlist/byGeneric/', PostListCreateGeneric.as_view()),
-    path('', include(router.urls)),
+    #path('', include(router.urls)),
+    path('list/', ComeAPIView.as_view()),
+    path('comment/', PostAPIView.as_view()),
 ]

@@ -83,4 +83,11 @@ class PostListCreateGeneric(generics.ListCreateAPIView):
 class PostModelViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+
+class ComeAPIView(APIView):
+    def get(self, request):
+        post = Post.objects.all()
+        serializer = PostSerializer(post, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
