@@ -45,9 +45,6 @@ class PostAPIView2(APIView):
                 return Response({"message": "post success"}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# FBV
-# posts > views.py
-# PostAPI_FBV 추가
 @api_view(['POST'])
 def PostAPI_FBV(request):
     serializer = PostSerializer(data=request.data)
